@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tienda TechManía</title>
+
+<style>
+
+/* Diseño general */
+body {
+   background-color: #f4f6f8;
+   font-family: Arial, Helvetica, sans-serif;
+   color: #222222;
+   margin: 0;
+   line-height: 1.6;
+   text-align: center;
+}
+
+/* Encabezado */
+header {
+   background-color: #123456;
+   color: white;
+   padding: 25px;
+}
+
+header h1 {
+   margin: 0;
+}
+
+/* Navegación */
+nav {
+   background-color: #1d3557;
+   padding: 15px;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   gap: 15px;
+}
+
+nav a {
+   color: white;
+   text-decoration: none;
+   font-size: 16px;
+   padding: 10px 15px;
+}
+
+nav a:hover {
+   background-color: #457b9d;
+   border-radius: 5px;
+}
+
+/* Imagen principal */
+.hero {
+   padding: 20px;
+}
+
+.hero img {
+   max-width: 100%;
+   height: auto;
+   border-radius: 10px;
+}
+
+/* Contenido */
+main {
+   max-width: 1100px;
+   width: 90%;
+   margin: auto;
+   padding: 20px 0;
+}
+
+section {
+   background-color: white;
+   padding: 25px;
+   margin-bottom: 25px;
+   border-radius: 10px;
+}
+
+/* Oferta */
+.oferta {
+   background-color: #e8f1ff;
+   border-left: 5px solid #1d3557;
+   padding: 20px;
+   margin: 20px 0;
+}
+
+/* Catálogo */
+.tabla-contenedor {
+   overflow-x: auto;
+}
+
+table {
+   width: 150%;
+   border-collapse: collapse;
+  
+}
+
+th, td {
+   border: 1px solid #cccccc;
+   padding: 40px;
+   text-align: center;
+   vertical-align: middle;
+}
+
+th {
+   background-color: #1d3557;
+   color: white;
+}
+
+/* Imágenes del catálogo */
+td img {
+   width: 150px;
+   max-width: 100%;
+   height: 150px;
+   object-fit: contain;
+   display: block;
+   margin: 0 auto 10px auto;
+}
+
+/* Precios */
+.precio-original {
+   color: #666666;
+}
+
+.precio-oferta {
+   color: #b22222;
+   font-size: 20px;
+   font-weight: bold;
+}
+
+.ahorro {
+   color: #246b45;
+   font-weight: bold;
+}
+
+/* Botones de productos */
+.boton-producto {
+   display: inline-block;
+   padding: 10px 15px;
+   background-color: #1d3557;
+   color: white;
+   text-decoration: none;
+   border-radius: 20px;
+   font-size: 14px;
+   margin-top: 20px;
+}
+
+.boton-producto:hover {
+   background-color: #457b9d;
+}
+
+/* Detalles de productos */
+.detalle-producto {
+   margin-top: 40px;
+   border: 1px solid #dddddd;
+}
+
+.detalle-producto img {
+   width: 300px;
+   max-width: 100%;
+   height: 250px;
+   object-fit: contain;
+}
+
+.detalle-producto ul {
+   text-align: left;
+   display: inline-block;
+   max-width: 600px;
+}
+
+.detalle-producto li {
+   margin-bottom: 10px;
+}
+
+/* Formulario */
+.formulario {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+   max-width: 500px;
+   margin: auto;
+}
+
+.formulario label {
+   font-weight: bold;
+}
+
+.formulario input {
+   width: 100%;
+   box-sizing: border-box;
+   padding: 12px;
+   border: 1px solid #888888;
+   border-radius: 5px;
+   font-size: 16px;
+}
+
+/* Botón */
+button {
+   padding: 12px 25px;
+   background-color: #1d3557;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+button:hover {
+   background-color: #457b9d;
+}
+
+/* Pie de página */
+footer {
+   background-color: #222222;
+   color: white;
+   padding: 20px;
+}
+
+/* Accesibilidad */
+a:focus, button:focus, input:focus {
+   outline: 3px solid #ffbf47;
+   outline-offset: 2px;
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+
+   header {
+      padding: 20px 10px;
+   }
+
+   header h1 {
+      font-size: 26px;
+   }
+
+   nav {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 12px;
+   }
+
+   nav a {
+      width: auto;
+      text-align: center;
+      padding: 12px 5px;
+      font-size: 14px;
+      background-color: #28476e;
+      border-radius: 8px;
+   }
+
+   nav a:last-child {
+      grid-column: 1 / -1;
+   }
+
+   nav a:hover {
+      background-color: #457b9d;
+   }
+
+   main {
+      width: 95%;
+      margin: auto;
+   }
+
+   section {
+      padding: 15px;
+   }
+
+   table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+   }
+
+   th, td {
+      padding: 15px;
+      font-size: 12px;
+   }
+
+   td img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+   }
+
+   .boton-producto {
+      font-size: 13px;
+      padding: 10px;
+   }
+
+   .detalle-producto img {
+      width: 200px;
+      height: 200px;
+      object-fit: contain;
+   }
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navegación -->
+<nav aria-label="Navegación principal">
+   <a href="#inicio">Inicio</a>
+   <a href="#productos">Productos</a>
+   <a href="#servicios">Servicios</a>
+   <a href="#informacion">Más Información</a>
+   <a href="#contacto">Contacto</a>
+</nav>
+
+<main>
+
+<!-- Inicio -->
+<h1 id="inicio">Bienvenido a TechManía</h1>
+
+<div class="hero">
+   <img src="https://ultimainformatica.com/img/cms/TIENDAS/tienda%20de%20informatica%20ultima%20sur%20de%20tenerife-2.jpg"
+   alt="Imagen de la tienda TechManía">
+</div>
+
+<!-- Catálogo -->
+<div class="tabla-contenedor" id="catalogo">
+
+   <h2>Nuestros Productos</h2>
+
+   <p>
+   En TechManía encontrarás productos tecnológicos
+   para diferentes necesidades, incluyendo accesorios,
+   equipos y dispositivos electrónicos.
+   </p>
+
+   <!-- Oferta -->
+   <div class="oferta">
+      <h2>¡Ofertas en especial!</h2>
+      <p>90% de descuento en productos seleccionados por nuestra empresa.</p>
+      <p>¡Aprovecha nuestros precios especiales esta temporada!</p>
+   </div>
+
+   <div class="tabla-contenedor">
+
+      <table>
+
+         <thead>
+            <tr>
+               <th>Laptop</th>
+               <th>Teclado</th>
+               <th>Mouse</th>
+               <th>Monitor</th>
+               <th>Audífonos</th>
+               <th>Micrófono</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            <tr>
+
+               <!-- Laptop -->
+               <td>
+                  <img src="https://click.gt/cdn/shop/files/0117-1.webp?v=1771021556&width=300"
+                  alt="Laptop">
+
+                  <p><strong>Laptop LDC15255-A117BLK-PUS</strong></p>
+
+                  <a class="boton-producto" href="laptop.html"> Llevame a ver su descuento</a>
+				
+               </td>
+
+               <!-- Teclado -->
+               <td>
+                  <img src="https://www.macrosistemas.com/wp-content/uploads/0910-3-1.jpg"
+                  alt="Teclado">
+
+                  <p><strong>Teclado Multimedia Alámbrico</strong></p>
+                 
+                  <a class="boton-producto" href="teclado.html"> Llevame a ver su descuento</a>
+               </td>
+
+               <!-- Mouse -->
+               <td>
+                  <img src="https://resource.logitech.com/w_544,h_466,ar_7:6,c_pad,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/2025-update/mx-master-3s-bluetooth-edition-top-view-black-new-1.png"
+                  alt="Ratón">
+
+                  <p><strong>MX Master 3S Bluetooth Edition</strong></p>
+
+                  <a class="boton-producto" href="mouse.html"> Llevame a ver su descuento</a>
+               </td>
+
+               <!-- Monitor -->
+               <td>
+                  <img src="https://es-store.msi.com/cdn/shop/files/portatil-profesional-msi-pro-mp275-e14l-1.png?v=1787580933&width=1214"
+                  alt="Monitor">
+
+                  <p><strong>MSI PRO MP275 E14L Monitor</strong></p>
+
+                  <a class="boton-producto" href="monitor.html"> Llevame a ver su descuento</a>
+               </td>
+
+               <!-- Audífonos -->
+               <td>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0dH8AqrWsJi3TyleBywYmemd3u29JwT_Yy98ytjGxK9O8hkQdgFXC8BI2&s=10"
+                  alt="Audífonos">
+
+                  <p><strong>Audífonos Razer Kraken V4 X</strong></p>
+				  
+                  <a class="boton-producto" href="audifonos.html"> Llevame a ver su descuento</a>
+               </td>
+
+               <!-- Micrófono -->
+               <td>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6dGi9Q-3lBDcc_c1-Fwco2UGyZ4UFiPmbQ9pR8T4LiAzibhBsRjgaZm5I&s=10"
+                  alt="Micrófono">
+
+                  <p><strong>Logitech Yeti GX RGB Lightsync</strong></p>
+
+                  <a class="boton-producto" href="microfono.html"> Llevame a ver su descuento</a>
+               </td>
+
+            </tr>
+         </tbody>
+
+      </table>
+
+   </div>
+
+</section>
+
+
+<!-- Servicios -->
+<section id="servicios">
+
+   <h2>Servicios</h2>
+
+   <p>
+   TechManía brinda asistencia para mejorar el rendimiento de los dispositivos y facilitar el uso de la tecnología a sus clientes.
+   </p>
+
+   <p>
+   Además, ofrece una variedad de servicios tecnológicos, incluyendo mantenimiento y reparación de computadoras, instalación y actualización de programas, asesoría para seleccionar equipos tecnológicos y ayuda para solucionar problemas técnicos.
+   </p>
+
+</section>
+
+<!-- Más información -->
+<section id="informacion">
+
+   <h2>Más Información</h2>
+
+   <p>
+   Buscamos ofrecer una experiencia
+   de compra sencilla, organizada y accesible.
+   </p>
+
+   <p>
+   En TechManía nos comprometemos a ofrecer productos de calidad, precios accesibles y una atención confiable. Contamos con opciones de pago variadas, garantía en productos seleccionados, ofertas especiales y recomendaciones para ayudarte a elegir los equipos que mejor se adapten a tus necesidades.
+   ¡La tecnología que necesitas, al mejor precio!
+   </p>
+
+</section>
+
+<!-- Contacto -->
+<section id="contacto">
+
+   <h2>Contacto</h2>
+
+   <p>Completa el formulario para recibir información adicional.</p>
+
+   <form class="formulario">
+
+      <label for="nombre">Nombre:</label>
+
+      <input type="text" id="nombre"
+      name="nombre" placeholder="Escribe tu nombre"
+      required>
+
+      <label for="correo">Correo electrónico:</label>
+
+      <input type="email" id="correo"
+      name="correo" placeholder="Escribe tu correo"
+      required>
+
+      <label for="mensaje">Mensaje:</label>
+
+      <input type="text" id="mensaje"
+      name="mensaje" placeholder="Escribe tu mensaje"
+      required>
+
+      <button type="submit">Enviar</button>
+
+   </form>
+
+</section>
+
+</main>
+
+<!-- Pie de página -->
+<footer>
+   <p>Copyright TechManía 2025</p>
+</footer>
+
+</body>
+</html>
